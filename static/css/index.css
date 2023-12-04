@@ -1,0 +1,74 @@
+.header {
+  height: 60px;
+}
+
+/* 头部容器 */
+.header .content {
+  justify-content: space-between;
+  height: 60px;
+}
+
+/* logo图片 */
+.header .content .logo img {
+  height: 60px;
+}
+
+.header .content .search {
+  align-items: center;
+  width: 700px;
+}
+
+/* 搜索框 */
+.header .content .search .search-box {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  border: 2px solid var(--my-in);
+}
+
+.header .content .search .search-box input {
+  width: 100%;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+}
+
+.header .content .search .search-box button {
+  width: 100px;
+  border: 0;
+  background-color: var(--my-in);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 用户信息 */
+.header .content .user {
+  position: relative;
+  align-items: center;
+}
+
+/* 地理位置 */
+.header .content .user .gps {
+  margin-right: 15px;
+}
+
+/* 登录入口 */
+.header .content .user .login {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* 登录二维码 */
+.header .content .user .erweima {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  padding: 10px;
+  box-shadow: 0 0 5px 5px rgba(241, 89, 42, .5);
+}
+
+.header .content .user .erweima h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}

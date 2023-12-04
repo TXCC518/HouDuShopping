@@ -1,0 +1,50 @@
+/* 主CSS配置文件 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS定义变量 */
+:root {
+  --my-main: #3f3f3f;
+  --my-f: #FFCA58;
+  --my-in: #F1592A;
+}
+
+body {
+  /* 字体颜色 */
+  color: var(--my-main);
+}
+
+/* 容器 */
+.content {
+  width: 1100px;
+  margin: auto;
+}
+
+/* 响应式布局 */
+.flex {
+  display: flex;
+}
+
+/* 字体图标 */
+@font-face {
+  font-family: 'iconfont';
+  src: url('./font-icon/iconfont.woff2?t=1701411874068') format('woff2'),
+    url('./font-icon/iconfont.woff?t=1701411874068') format('woff'),
+    url('./font-icon/iconfont.ttf?t=1701411874068') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 隐藏盒子 */
+.no-show {
+  display: none;
+}

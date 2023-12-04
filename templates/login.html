@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login-厚度之网</title>
+  <link rel="shortcut icon" href="../static/images/houdu.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="../static/css/login.css">
+</head>
+
+<body>
+  <!-- 登录、注册模块 -->
+  <div class="container">
+    <!-- 注册模块 -->
+    <div class="form-container sign-up-container">
+      <div class="form">
+        <h2>sign up</h2>
+        <input type="text" name="username" id="username" placeholder="Username...">
+        <input type="email" name="emal" id="email" placeholder="Email...">
+        <input type="password" name="password" id="password" placeholder="Password...">
+        <button class="signUp">sign up</button>
+      </div>
+    </div>
+    <!-- 登录模块 -->
+    <div class="form-container sign-in-container">
+      <div class="form">
+        <h2>sign in</h2>
+        <input type="email" name="emal" id="email" placeholder="Email...">
+        <input type="password" name="password" id="password" placeholder="Password...">
+        <a href="#" class="forget-password">forget your password</a>
+        <button class="signIn">sign in</button>
+      </div>
+    </div>
+    <!-- 覆盖页面 -->
+    <div class="overlay-container">
+      <div class="overlay">
+        <!-- 左边的覆盖页 -->
+        <div class="overlay-panel overlay-left-container">
+          <h2>welcome back!</h2>
+          <p>For a better experience, please login with your personal information</p>
+          <button id="sign-in">sign in</button>
+        </div>
+        <!-- 右边的覆盖页 -->
+        <div class="overlay-panel overlay-right-container">
+          <h2>hello friend!</h2>
+          <p>Enter your personal details and start journey with us</p>
+          <button id="sign-up">sign up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/login.js"></script>
+</body>
+
+</html>

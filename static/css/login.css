@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  /* 水平方向剧中 */
+  justify-content: center;
+  /* 垂直方向居中 */
+  align-items: center;
+  height: 100vh;
+  background-color: #f6f5f7;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 32px;
+  /* 文本的每个单词首字母大写 */
+  text-transform: capitalize;
+}
+
+.container {
+  /* 相对定位 */
+  position: relative;
+  width: 768px;
+  height: 480px;
+  background-color: white;
+  /* 盒子阴影 */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.form-container {
+  /* 绝对定位 */
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  /* 过渡效果 */
+  transition: all 0.6s ease-in-out;
+}
+
+.form {
+  display: flex;
+  /* 将容器中的元素垂直排列 */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 50px;
+}
+
+/* 表单样式 */
+input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  background-color: #eee;
+  border: none;
+}
+
+/* 忘记密码样式 */
+.forget-password {
+  display: inline-block;
+  height: 20px;
+  text-decoration: none;
+  color: #bbb;
+  /* 每个单词首字母大写 */
+  text-transform: capitalize;
+  font-size: 12px;
+}
+
+/* 点击改变样式 */
+.forget-password:hover {
+  color: lightslategray;
+  border-bottom: 2px solid #ff4b2b;
+}
+
+/* 按钮样式 */
+button {
+  background: #ff4b2b;
+  padding: 10px 50px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  /* 所有字母大写 */
+  text-transform: uppercase;
+  color: white;
+  margin-top: 10px;
+  outline: none;
+  transition: transform 80;
+}
+
+/* 按钮被点击时 */
+button:active {
+  /* 按钮尺寸缩小到原尺寸的0.95倍 */
+  transform: scale(0.95);
+}
+
+/* 覆盖页面样式 */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  /* 占一半的宽度 */
+  width: 50%;
+  height: 100%;
+  /* 显示在其他标签上面 */
+  z-index: 100;
+  /* 右对齐 */
+  right: 0;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  /* 隐藏一半，显示一半 */
+  left: -100%;
+  background-color: #ff4b2b;
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  color: white;
+  padding: 0 40px;
+  text-align: center;
+}
+
+/* 层叠页面按钮的样式 */
+.overlay-panel button {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.overlay-panel p {
+  font-size: 12px;
+  margin: 10px 0 15px 0;
+}
+
+.overlay-right-container {
+  right: 0;
+}
+
+.container.active .sign-up-container {
+  /* 注册页面向x轴正方向移动宽度1倍 */
+  transform: translateX(100%);
+  /* 修改注册页面层叠性，将注册页面显示在登录页面上方 */
+  z-index: 5;
+}
+
+.container.active .sign-in-container {
+  /* 登录页面向x轴正方向移动宽度1倍，在注册页面下方 */
+  transform: translateX(100%);
+}
+
+.container.active .overlay-container {
+  /* 覆盖页面向x轴反方向移动宽度1倍 */
+  transform: translateX(-100%);
+}
+
+.container.active .overlay {
+  /* 覆盖页面向x轴正方向移动宽度1/2 */
+  transform: translateX(50%);
+}
