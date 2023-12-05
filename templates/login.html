@@ -9,6 +9,14 @@
   <link rel="shortcut icon" href="../static/images/houdu.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="../static/css/login.css">
+  <link rel="stylesheet" href="../static/css/pre.css">
+
+  <!-- 引入axios js文件 -->
+  <script src="../static/lib/axios/axios.js"></script>
+  <!-- 生成二维码 js文件 -->
+  <script src="../static/lib/QrCode/qrcode.min.js"></script>
+  <!-- 引入jQuery js文件 -->
+  <script src="../static/lib/jQuery/jquery.js"></script>
 </head>
 
 <body>
@@ -22,7 +30,12 @@
         <input type="email" name="emal" id="email" placeholder="Email...">
         <input type="password" name="password" id="password" placeholder="Password...">
         <button class="signUp">sign up</button>
+        <div class="iconfont ewm">&#xe608;</div>
       </div>
+      <!-- <div class="ewm-box ewm-singup no-show">
+        <h3>微信扫码登录</h3>
+        <div class="ewm-image"></div>
+      </div> -->
     </div>
     <!-- 登录模块 -->
     <div class="form-container sign-in-container">
@@ -32,7 +45,13 @@
         <input type="password" name="password" id="password" placeholder="Password...">
         <a href="#" class="forget-password">forget your password</a>
         <button class="signIn">sign in</button>
+        <div class="iconfont ewm">&#xeb89;</div>
       </div>
+    </div>
+    <!-- 二维码模块 -->
+    <div class="form-container ewm-box no-show">
+      <h3>微信扫码登录</h3>
+      <div class="ewm-image"></div>
     </div>
     <!-- 覆盖页面 -->
     <div class="overlay-container">

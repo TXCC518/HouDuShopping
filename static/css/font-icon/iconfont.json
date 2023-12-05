@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "12237678",
+      "name": "二维码",
+      "font_class": "erweima",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "12680232",
+      "name": "二维码",
+      "font_class": "erweima1",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "14315867",
+      "name": "二维码",
+      "font_class": "erweima2",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    },
+    {
+      "icon_id": "19877490",
+      "name": "二维码",
+      "font_class": "erweima3",
+      "unicode": "eb89",
+      "unicode_decimal": 60297
+    },
+    {
       "icon_id": "3906300",
       "name": "搜索",
       "font_class": "sousuo",
