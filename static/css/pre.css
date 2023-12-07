@@ -14,12 +14,17 @@
   --my-w: #EFEFEF;
   --my-bg1: #F4F5E9;
   --my-bg2: #F4F0E6;
+  --my-font: #eee;
 }
 
 /* 链接通用样式 */
 a {
   text-decoration: none;
   color: var(--my-main);
+}
+
+li {
+  list-style: none;
 }
 
 body {

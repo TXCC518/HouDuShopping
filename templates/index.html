@@ -23,33 +23,9 @@
 <body>
   <!-- 头部 -->
 
-  <div class="header">
-    <!-- 容器 -->
-
-    <div class="content flex">
-      <!-- 网站logo图片 -->
-      <div class="logo">
-        <img src="../static/images/logo.png" alt="潮云电商">
-      </div>
-      <!-- 搜索框 -->
-      <div class="search flex">
-        <div class="search-box flex">
-          <input type="text" name="" id="">
-          <button class="iconfont">&#xe603;</button>
-        </div>
-      </div>
-      <!-- 登录、注册以及用户名显示及定位 -->
-      <div class="user flex">
-        <b class="gps">河南省开封市</b>
-        <a href="./login.html" class="login">请登录</a>
-        <div class="user-show no-show">
-          <img src="" alt="">
-          <b><i class="user-name"></i></b>
-          <a href="#">退出</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="header"></div>
+  <!-- 引入头部容器 -->
+  <script src="../static/js/header.js"></script>
   <!-- 轮播图 -->
 
   <div class="lbt-background">
@@ -85,7 +61,11 @@
     stackedCard.init();
   </script>
   <!-- 商品列表 -->
-
+  <script>
+    function getShopDetail(gid) {
+      location.href = '../../templates/shopInfo.html?gid=' + gid;
+    }
+  </script>
   <div class="shop-background">
     <div class="content shop-list">
     </div>

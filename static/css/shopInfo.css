@@ -1,0 +1,278 @@
+/* 背景色 */
+.shop-detail {
+  background-color: rgb(233, 222, 217);
+}
+
+/* 版心 */
+.shop-detail .shopInfo {
+  width: 1180px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* 卖家店铺信息栏 */
+.shopInfo .shop-name {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 12px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.shopInfo .shop-name .image {
+  width: 56px;
+  height: 56px;
+}
+
+.shopInfo .shop-name .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+}
+
+.shopInfo .shop-name .shop-title {
+  margin-left: 10px;
+}
+
+.shopInfo .shop-name .shop-title .title {
+  font-size: 18px;
+  font-weight: 600;
+  max-width: 170px;
+}
+
+.shopInfo .shop-name .shop-title .shop-logo {
+  width: 38px;
+  height: 16px;
+  border-radius: 8px;
+  background-color: rgb(255, 0, 54);
+  font-size: 13px;
+  text-align: center;
+  line-height: 16px;
+  color: #fff;
+  margin-top: 7px;
+}
+
+.shopInfo .shop-name .border {
+  border: 1px solid var(--my-font);
+  height: 26px;
+  margin: 0 20px 0 28px;
+}
+
+.shopInfo .shop-name .shop-details {
+  display: flex;
+}
+
+.shopInfo .shop-name .shop-details div {
+  margin-right: 49px;
+}
+
+.shopInfo .shop-name .shop-details div span {
+  display: block;
+}
+
+.shopInfo .shop-name .shop-details div .top {
+  font-size: 14px;
+  color: #7f7f7f;
+}
+
+.shopInfo .shop-name .shop-details div .bottom {
+  font-size: 18px;
+  color: #000;
+}
+
+.shopInfo .shop-name .btn1 {
+  margin-left: 330px;
+  margin-right: 13px;
+}
+
+.shopInfo .shop-name .btns img {
+  width: 13px;
+  height: 13px;
+  margin: 0 6px 0 12px;
+}
+
+.shopInfo .shop-name .btns {
+  display: flex;
+  align-items: center;
+  width: 102px;
+  height: 36px;
+  border: 1px solid var(--my-font);
+  border-radius: 18px;
+  line-height: 36px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 商品详细信息 */
+
+.shop-detail-info {
+  background-color: #fff;
+  padding: 0 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 24px;
+}
+
+.shop-detail-info .shop-detail-info-top {
+  display: flex;
+}
+
+/* 商品图左边的样式 */
+.shop-detail-info .shop-detail-info-top .shop-left {
+  width: 453px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-left .good-image {
+  width: 450px;
+  height: 450px;
+  padding: 0 56px;
+  background-color: rgba(0, 0, 0, .02);
+  border-radius: 12px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-left .good-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-left .good-detail-images {
+  height: 72px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-left .good-detail-images ul {
+  display: flex;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-left .good-detail-images ul li {
+  width: 68px;
+  height: 68px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, .02);
+  margin-left: 9px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-left .good-detail-images ul .image-style {
+  border: 1px solid var(--my-in);
+}
+
+.shop-detail-info .shop-detail-info-top .shop-left .good-detail-images ul li:first-child {
+  margin-left: 0;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-left .good-detail-images ul li img {
+  height: 100%;
+  margin: 0 8px;
+  border-radius: 6px;
+}
+
+/* 商品图右边的样式 */
+.shop-detail-info .shop-detail-info-top .shop-right {
+  margin-left: 21px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #000;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .sales {
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, .4);
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .price {
+  color: var(--my-in);
+  margin-top: 14px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .price span {
+  font-size: 28px;
+  margin: 0 2px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .price .font {
+  font-size: 12px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .address {
+  font-size: 14px;
+  display: flex;
+  margin-top: 15px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .attr {
+  min-width: 75px;
+  color: #7f7f7f;
+  font-size: 14px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .address .attribute {
+  color: #000;
+  height: 45px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .address .attribute div {
+  height: 22.5px;
+  line-height: 22.5px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .address .attribute .top span:nth-child(1) {
+  padding: 0 12px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .address .attribute .top span:nth-child(2) {
+  padding-left: 24px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .address .attribute .bottom span {
+  margin-right: 8px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .many-attr {
+  margin-top: 26px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-color {
+  display: flex;
+  align-items: center;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-color .attribute {
+  display: flex;
+  flex-wrap: wrap;
+  height: 36px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-color .attribute .goods-style {
+  padding: 2px;
+  height: 100%;
+  margin: 0 4.5px 9px;
+  background-color: rgba(0, 0, 0, .06);
+  border-radius: 6px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-color .attribute .goods-style div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-color .attribute .goods-style div img {
+  width: 30px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-color .attribute .goods-style div span {
+  padding: 0 8px 0 4px;
+}
