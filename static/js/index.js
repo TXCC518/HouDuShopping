@@ -48,8 +48,7 @@
     let windowHeight = $(this).height();
     console.log(scrollTop, scrollHeight, windowHeight);
     if (scrollTop + windowHeight + 10 >= scrollHeight) {
-      //这部分写逻辑代码
-      //滚动条下拉时，再追加下面的dom数据
+      //滚动条下拉时，再追加下面的数据
       if (i < data.length) {
         getShopList();
       }

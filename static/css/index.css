@@ -94,7 +94,6 @@
 
 .lbt ul li {
   width: 600px;
-
 }
 
 .lbt img {
@@ -227,4 +226,19 @@
   bottom: 0;
   right: 0;
   border-bottom-right-radius: 15px;
+}
+
+/* 商品收藏成功 */
+.success-col {
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  border: 1px solid #000;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  background-color: rgb(102, 102, 102);
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
 }

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>厚渡之网 - 我的购物车</title>
+  <link rel="shortcut icon" href="../static/images/houdu.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../static/css/pre.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="../static/css/cart.css">
+
+  <!-- 引入jQuery js文件 -->
+  <script src="../static/lib/jQuery/jquery.js"></script>
+</head>
+
+<body>
+  <!-- 网页头部容器 -->
+  <div class="header"></div>
+  <!-- 引入头部容器 -->
+  <script src="../static/js/header.js"></script>
+
+  <!-- 购物车模块 -->
+  <div class="shopping-cart">
+    <div class="cart">
+      <div class="cart-top">
+        <div class="title">
+          <span>购物车（全部<b>2</b>）</span>
+        </div>
+        <div class="total-price">
+          <div class="price"><span>已选商品（不含运费）</span><span id="total-price">0.00</span></div>
+          <div class="button">
+            <button id="res-button">结算</button>
+          </div>
+        </div>
+      </div>
+      <div class="cart-middle">
+        <div class="cart-table">
+          <div class="th-chk">
+            <input type="checkbox" name="" id="check">
+            <span>全选</span>
+          </div>
+          <div class="th-item">
+            <span>商品信息</span>
+          </div>
+          <div class="th-info"></div>
+          <div class="th-price">
+            <span>单价</span>
+          </div>
+          <div class="th-amount">
+            <span>数量</span>
+          </div>
+          <div class="th-sum">
+            <span>金额</span>
+          </div>
+          <div class="th-op">
+            <span>操作</span>
+          </div>
+        </div>
+        <div class="cart-shoppingInfo">
+          <div class="total-shopping">
+            <ul class="total-items">
+              <li class="every-item">
+                <div class="shopping-top">
+                  <span><input type="checkbox" name="" id="check"></span>
+                  <span class="img"><img src="../static/images/index.png" alt=""></span>
+                  <span class="shop-title">店铺：机御旗舰店</span>
+                </div>
+                <div class="shopping-bottom">
+                  <ul class="item-content">
+                    <li class="td-chk">
+                      <input type="checkbox" name="" id="check">
+                    </li>
+                    <li class="td-item">
+                      <div class="img">
+                        <img
+                          src="https://img.alicdn.com/bao/uploaded/i3/2214219763964/O1CN016jRU6u1f9YuGstGpD_!!0-item_pic.jpg_240x240.jpg"
+                          alt="">
+                      </div>
+                      <div class="info">
+                        <div class="title"><span>若简澳洲进口和牛m9眼肉盖原切牛排新鲜雪花儿童牛排烤肉食材500g</span></div>
+                        <div class="index">
+                          <img src="../static/images/cart1.png" alt="">
+                          <img src="../static/images/cart2.png" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="td-info">
+                      <div class="many-attr">
+                        <div class="attr">
+                          <p class="sku">净含量：500g</p>
+                          <p class="sku">口味：原味</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="td-price">
+                      <div class="every-price"><span>￥51.80</span></div>
+                    </li>
+                    <li class="td-amount">
+                      <div class="bottons">
+                        <div class="btn-l">
+                          <button>-</button>
+                        </div>
+                        <div class="input">
+                          <input type="text" name="" id="" value="1">
+                        </div>
+                        <div class="btn-r">
+                          <button>+</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="td-sum">
+                      <div class="total-price">
+                        <span>￥51.80</span>
+                      </div>
+                    </li>
+                    <li class="td-op">
+                      <div class="op">
+                        <span>删除</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="every-item">
+                <div class="shopping-top">
+                  <span><input type="checkbox" name="" id="check"></span>
+                  <span class="img"><img src="../static/images/index.png" alt=""></span>
+                  <span class="shop-title">店铺：机御旗舰店</span>
+                </div>
+                <div class="shopping-bottom">
+                  <ul class="item-content">
+                    <li class="td-chk">
+                      <input type="checkbox" name="" id="check">
+                    </li>
+                    <li class="td-item">
+                      <div class="img">
+                        <img
+                          src="https://img.alicdn.com/bao/uploaded/i3/2214219763964/O1CN016jRU6u1f9YuGstGpD_!!0-item_pic.jpg_240x240.jpg"
+                          alt="">
+                      </div>
+                      <div class="info">
+                        <div class="title"><span>若简澳洲进口和牛m9眼肉盖原切牛排新鲜雪花儿童牛排烤肉食材500g</span></div>
+                        <div class="index">
+                          <img src="../static/images/cart1.png" alt="">
+                          <img src="../static/images/cart2.png" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="td-info">
+                      <div class="many-attr">
+                        <div class="attr">
+                          <p class="sku">净含量：500g</p>
+                          <p class="sku">口味：原味</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="td-price">
+                      <div class="every-price"><span>￥51.80</span></div>
+                    </li>
+                    <li class="td-amount">
+                      <div class="bottons">
+                        <div class="btn-l">
+                          <button>-</button>
+                        </div>
+                        <div class="input">
+                          <input type="text" name="" id="" value="1">
+                        </div>
+                        <div class="btn-r">
+                          <button>+</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="td-sum">
+                      <div class="total-price">
+                        <span>￥51.80</span>
+                      </div>
+                    </li>
+                    <li class="td-op">
+                      <div class="op">
+                        <span>删除</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="cart-bottom">
+        <div class="bottom-left">
+          <div class="check">
+            <input type="checkbox" name="" id="check">
+            <span>全选</span>
+          </div>
+          <div class="remove">
+            <span>删除</span>
+          </div>
+        </div>
+        <div class="bottom-right">
+          <div class="nums">
+            <span>已选商品<span class="num">0</span>件</span>
+          </div>
+          <div class="total-price">
+            <span>合计（不含运费）：</span><span id="total-price">0.00</span>
+          </div>
+          <div class="button">
+            <button id="res-button">结算</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

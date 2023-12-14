@@ -38,7 +38,7 @@ body {
   margin: auto;
 }
 
-/* 响应式布局 */
+/* flex布局 */
 .flex {
   display: flex;
 }

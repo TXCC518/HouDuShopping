@@ -130,9 +130,12 @@
 .shop-detail-info .shop-detail-info-top .shop-left .good-image {
   width: 450px;
   height: 450px;
-  padding: 0 56px;
   background-color: rgba(0, 0, 0, .02);
   border-radius: 12px;
+}
+
+.shop-detail-info .shop-detail-info-top .shop-left .good-image.padding-show {
+  padding: 0 56px;
 }
 
 .shop-detail-info .shop-detail-info-top .shop-left .good-image img {
@@ -152,7 +155,6 @@
 }
 
 .shop-detail-info .shop-detail-info-top .shop-left .good-detail-images ul li {
-  width: 68px;
   height: 68px;
   border-radius: 6px;
   background-color: rgba(0, 0, 0, .02);
@@ -226,11 +228,11 @@
   line-height: 22.5px;
 }
 
-.shop-detail-info .shop-detail-info-top .shop-right .address .attribute .top span:nth-child(1) {
+.shop-detail-info .shop-detail-info-top .shop-right .address .attribute .top span:nth-child(2) {
   padding: 0 12px;
 }
 
-.shop-detail-info .shop-detail-info-top .shop-right .address .attribute .top span:nth-child(2) {
+.shop-detail-info .shop-detail-info-top .shop-right .address .attribute .top span:nth-child(3) {
   padding-left: 24px;
 }
 
@@ -251,12 +253,12 @@
 .shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute {
   display: flex;
   flex-wrap: wrap;
-  height: 36px;
+  /* height: 36px; */
 }
 
 .shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute .goods-style {
   padding: 2px;
-  height: 100%;
+  height: 36px;
   margin: 0 4.5px 9px;
   background-color: rgba(0, 0, 0, .06);
   border-radius: 6px;
@@ -346,6 +348,7 @@
   font-size: 16px;
   font-weight: 700;
   box-shadow: rgba(255, 203, 0, 0.2) 0px 9px 13px 0px;
+  cursor: pointer;
 }
 
 .shop-detail-info .shop-detail-info-top .shop-right .buy-or-cart .btn1 {

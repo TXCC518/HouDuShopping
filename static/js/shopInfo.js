@@ -12,26 +12,31 @@ $('title').html(data[gid].title);
 (() => {
   // 左侧商品图片显示
   // 页面加载完成后，先显示li列表中的第一个图片，并显示样式
-  const $good_image = $('.shop-detail-info .shop-detail-info-top .shop-left .good-image img');
-  $good_image.attr('src', data[gid].images[0]);
+  const $shop_left = $('.shop-detail-info .shop-detail-info-top .shop-left');
+  const $good_image = $shop_left.children('.good-image');
+  const $ul = $shop_left.children('.good-detail-images').children('ul');
+  $good_image.children('img').attr('src', data[gid].images[0]);
   for (let i = 0; i < data[gid].images.length; i++) {
-    $('.shop-detail-info .shop-detail-info-top .shop-left .good-detail-images ul').append(`
+    $ul.append(`
       <li><img src=${data[gid].images[i]} alt=""></li>
     `)
   }
-  const $li_imgs = $('.shop-detail-info .shop-detail-info-top .shop-left .good-detail-images ul li');
+  const $li_imgs = $ul.children('li');
   $li_imgs.eq(0).addClass('image-style');
   for (let i = 0; i < $li_imgs.length; i++) {
     $li_imgs.eq(i).mouseover(function () {
-      $('.shop-detail-info .shop-detail-info-top .shop-left .good-detail-images ul .image-style').removeClass('image-style');
+      $ul.children('.image-style').removeClass('image-style');
       $li_imgs.eq(i).addClass('image-style');
-      $good_image.attr('src', data[gid].images[i]);
+      $good_image.children('img').attr('src', data[gid].images[i]);
+      $good_image.addClass('padding-show');
     });
   }
 
   // 右侧商品各种属性显示
   let idx = 0;
-  const $many_attr = $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr');
+  const $shop_right = $('.shop-detail-info .shop-detail-info-top .shop-right');
+  $shop_right.children('.address').find('.city').html(`${data[gid].provice}${data[gid].city}`);
+  const $many_attr = $shop_right.children('.many-attr');
   $.each(data[gid].sku, (key) => {
     $many_attr.append(`
     <div class="goods-attr">
@@ -39,7 +44,7 @@ $('title').html(data[gid].title);
                   <div class="attribute">
                   </div>
     </div>`);
-    const $attribute = $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute');
+    const $attribute = $many_attr.children('.goods-attr').children('.attribute');
     for (let it = 0; it < data[gid].sku[key].length; it++) {
       $attribute.eq(idx).append(`<div class="goods-style">
                     <div>
@@ -47,7 +52,7 @@ $('title').html(data[gid].title);
                     </div>
                   </div>`)
     }
-    const $div = $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute .goods-style div');
+    const $div = $attribute.children('.goods-style').children('div');
     if (data[gid].style_details.length > 0 && idx === 0) {
       for (let i = 0; i < $div.length; i++) {
         $div.eq(i).prepend(`
@@ -55,7 +60,8 @@ $('title').html(data[gid].title);
         `);
         // 点击商品样式，改变左侧商品图展示
         $div.eq(i).click(function () {
-          $good_image.attr('src', $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute .goods-style div img').eq(i).attr('src'))
+          $good_image.children('img').attr('src', $div.children('img').eq(i).attr('src'));
+          $good_image.removeClass('padding-show');
         });
       }
     }
@@ -93,17 +99,18 @@ $('title').html(data[gid].title);
   `)
 
   // 商品数量选择
-  const $number = $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute.end .number input');
-  const $sub = $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute.end .sub input');
-  const $add = $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute.end .add input');
+  const $end = $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute.end');
+  const $number = $end.children('.number').find('input');
+  const $sub = $end.children('.sub').find('input');
+  const $add = $end.children('.add').find('input');
   function sub_noShow() {
     if (Number($number.val()) === 1) {
       $sub.attr('disabled', true);
-      $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute.end .sub').removeClass('style-show');
+      $end.children('.sub').removeClass('style-show');
       $sub.css('cursor', 'not-allowed');
     } else {
       $sub.attr('disabled', false);
-      $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute.end .sub').addClass('style-show');
+      $end.children('.sub').addClass('style-show');
       $sub.css('cursor', 'pointer');
     }
   }
@@ -116,11 +123,22 @@ $('title').html(data[gid].title);
   $add.click(() => {
     $number.val(Number($number.val()) + 1);
     sub_noShow();
-  })
+  });
 
   $number.change(() => {
     $number.attr("value", $number.val());
     console.log('text');
+  });
+
+  // 商品加入购物车，将当前商品存入到local storage中
+  $shop_right.children('.buy-or-cart').find('.btn2').click(function () {
+    let shopping_cart = localStorage.getItem('shopping_cart');
+    let skus = [];
+    const $goods_show = $('.shop-detail-info .shop-detail-info-top .shop-right .many-attr .goods-attr .attribute .goods-style.goods-show');
+    for (let i = 0; i < $goods_show.length; i++) {
+      console.log($goods_show.eq(i).find('span').text());
+    }
+    console.log($number.val());
   })
 
 })();
