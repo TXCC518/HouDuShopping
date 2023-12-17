@@ -46,7 +46,6 @@
     let scrollHeight = $(document).height();
     // 滚动条初始的长度
     let windowHeight = $(this).height();
-    console.log(scrollTop, scrollHeight, windowHeight);
     if (scrollTop + windowHeight + 10 >= scrollHeight) {
       //滚动条下拉时，再追加下面的数据
       if (i < data.length) {
@@ -54,4 +53,4 @@
       }
     }
   });
-})()
+})();

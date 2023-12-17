@@ -55,15 +55,21 @@
   <!-- 商品列表 -->
   <script>
     function getShopDetail(gid) {
-      location.href = './shopInfo.html?gid=' + gid;
+      // location.href = './shopInfo.html?gid=' + gid;
+      window.open(`./shopInfo.html?gid=` + gid);
     }
   </script>
   <div class="shop-background">
     <div class="content shop-list">
     </div>
-
-    <!-- 导入js文件 -->
-    <script src="../static/js/index.js"></script>
+  </div>
+  <!-- 侧边导航栏 -->
+  <div class="toolkit">
+  </div>
+  <!-- 导入侧边导航栏js文件 -->
+  <script src="../static/js/toolkit.js"></script>
+  <!-- 导入js文件 -->
+  <script src="../static/js/index.js"></script>
 </body>
 
 </html>

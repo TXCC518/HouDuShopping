@@ -392,3 +392,18 @@
 .shop-detail-info .shop-detail-info-bottom .image-center img {
   width: 750px;
 }
+
+/* 商品收藏成功 */
+.col {
+  position: fixed;
+  height: 40px;
+  border: 1px solid #000;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  background-color: rgb(102, 102, 102);
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  padding: 0 20px;
+}

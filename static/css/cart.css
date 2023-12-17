@@ -53,6 +53,12 @@ body {
   color: #fff;
   font-size: 16px;
   background-color: #aaa;
+  cursor: not-allowed;
+}
+
+#res-button.is-button {
+  background-color: #FF5000;
+  cursor: pointer;
 }
 
 .shopping-cart .cart .cart-middle .cart-table {
@@ -102,10 +108,45 @@ body {
   margin-bottom: 15px;
 }
 
-#check {
+/* 选中这个商品，外观发生变化 */
+.shopping-bottom .item-content.is-ok {
+  background-color: rgb(255, 249, 246) !important;
+  border: 1px solid #FF5000;
+}
+
+.checkbox {
+  margin-right: 5px;
   width: 15px;
   height: 15px;
-  margin-right: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+#check {
+  width: 100%;
+  height: 100%;
+
+}
+
+.td-chk {
+  position: relative;
+  overflow: hidden;
+}
+
+.bgurl input {
+  position: absolute;
+  left: -20px;
+}
+
+.bgurl label {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  left: 0;
+  background: url(../images/checkbox.png) no-repeat;
+  background-size: cover;
+  background-position: 0 0;
 }
 
 .shopping-cart .cart .cart-middle .shopping-top {
@@ -160,6 +201,15 @@ body {
   margin-right: 10px;
 }
 
+.shopping-cart .cart .cart-middle .shopping-bottom .item-content .td-item .info .title {
+  height: 32px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
 .shopping-cart .cart .cart-middle .shopping-bottom .item-content .td-item .info .index {
   height: 72px;
   display: flex;
@@ -201,6 +251,11 @@ body {
   height: 24px;
   border: 1px solid transparent;
   background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.shopping-cart .cart .cart-middle .shopping-bottom .item-content .td-amount .bottons button:hover {
+  border: 1px solid var(--my-in);
 }
 
 .shopping-cart .cart .cart-middle .shopping-bottom .item-content .td-amount .bottons input {
@@ -273,4 +328,10 @@ body {
 
 .shopping-cart .cart .cart-bottom .bottom-right .total-price #total-price {
   padding: 0 3px;
+}
+
+.remove-a:hover {
+  color: var(--my-in);
+  text-decoration: underline;
+  cursor: pointer;
 }
