@@ -15,7 +15,7 @@ $('title').html(data[gid].title);
   const $shop_left = $('.shop-detail-info .shop-detail-info-top .shop-left');
   const $good_image = $shop_left.children('.good-image');
   const $ul = $shop_left.children('.good-detail-images').children('ul');
-  $good_image.children('img').attr('src', data[gid].images[0]);
+  $good_image.find('img').attr('src', data[gid].images[0]);
   for (let i = 0; i < data[gid].images.length; i++) {
     $ul.append(`
       <li><img src=${data[gid].images[i]} alt=""></li>
@@ -27,10 +27,57 @@ $('title').html(data[gid].title);
     $li_imgs.eq(i).mouseover(function () {
       $ul.children('.image-style').removeClass('image-style');
       $li_imgs.eq(i).addClass('image-style');
-      $good_image.children('img').attr('src', data[gid].images[i]);
+      $good_image.find('img').attr('src', data[gid].images[i]);
       $good_image.addClass('padding-show');
     });
   }
+
+  // 左侧商品图放大
+  const $middle = $good_image.children('div');
+  const $large = $('.good-image-right');
+  const $layer = $middle.children('.layer');
+  // 经过商品图遮罩层显示，放大图片显示
+  $middle.mouseenter(() => {
+    $large.css('width', $middle.css('width'));
+    $large.css('heigth', $middle.css('height'));
+    $layer.css('display', 'block');
+    $large.css('display', 'block');
+    $large.css('backgroundImage', `url(${$good_image.find('img').attr('src')})`);
+  });
+  // 离开商品图遮罩层隐藏，放大图片隐藏
+  $middle.mouseleave(() => {
+    $layer.css('display', 'none');
+    $large.css('display', 'none');
+  });
+  // 在商品图上移动触发事件,遮罩层移动，放大图片显示改变
+  $middle.mousemove((e) => {
+    // x、y为鼠标在商品图中的位置
+    let x = e.offsetX;
+    let y = e.offsetY;
+    let mw = parseInt($middle.css('width')), mh = parseInt($middle.css('height'));
+    $layer.css('width', mw / 2 + 'px');
+    $layer.css('height', mh / 2 + 'px');
+    $large.css('background-size', `${mw * 2}px ${mh * 2}px`);
+    let width = mw / 2, height = mh / 2;
+    if (x >= 0 && x <= mw && y >= 0 && y <= mh) {
+      // mx、my表示遮罩层x轴、y轴移动的距离
+      let mx = 0, my = 0;
+      if (x < width / 2) mx = 0;
+      else if (x > mw - width / 2) mx = mw - width;
+      else mx = x - width / 2;
+
+      if (y < height / 2) my = 0;
+      else if (y > mh - height / 2) my = mh - height;
+      else my = y - height / 2;
+      // 改变遮罩层位置
+      $layer.css('top', my + 'px');
+      $layer.css('left', mx + 'px');
+      // 放大图片
+      $large.css('backgroundPositionX', -2 * mx + 'px');
+      $large.css('backgroundPositionY', -2 * my + 'px');
+    }
+
+  })
 
   // 右侧商品各种属性显示
   let idx = 0;
@@ -60,7 +107,7 @@ $('title').html(data[gid].title);
         `);
         // 点击商品样式，改变左侧商品图展示
         $div.eq(i).click(function () {
-          $good_image.children('img').attr('src', $div.children('img').eq(i).attr('src'));
+          $good_image.find('img').attr('src', $div.children('img').eq(i).attr('src'));
           $good_image.removeClass('padding-show');
         });
       }
@@ -153,7 +200,7 @@ $('title').html(data[gid].title);
     if (!shopping_cart) {
       shopping_cart = [];
     }
-    let skus = { sku: [], images: $good_image.children('img').attr('src'), id: gid, number: $number.val() };
+    let skus = { sku: [], images: $good_image.find('img').attr('src'), id: gid, number: $number.val() };
     for (let i = 0; i < $goods_show.length; i++) {
       skus.sku.push($goods_show.eq(i).find('span').text());
     }

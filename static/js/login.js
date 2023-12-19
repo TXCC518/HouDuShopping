@@ -58,12 +58,12 @@ let timerId = null;
     $ewms[i].addEventListener('click', success);
   }
   $id_ewm.click(success);
-})()
+})();
 
 const $container = $('.container').eq(0);
 const $signIn = $('#sign-in');
 const $signUp = $('#sign-up');
-
+// 显示二维码，进行扫码登录
 $signUp.click(function () {
   $container.addClass('active');
   clearInterval(timerId);
@@ -82,3 +82,63 @@ $signIn.click(function () {
     $forms[i].classList.remove('no-show');
   }
 });
+
+// 表单验证
+(() => {
+  const regs = [/^[0-9a-zA-Z_\u3E00-\u9FA5]{3,15}$/, /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/, /(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,30}/, /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/, /(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,30}/];
+  const errors = ['请输入4-16长度数字、字母、下划线', '请输入正确的邮箱格式', '必须包含字母、数字、特称字符，至少8个字符', '请输入正确的邮箱格式', '必须包含字母、数字、特称字符，至少8个字符'];
+  const $spans = $('.form span');
+  const $inputs = $('.form input');
+  // 验证格式是否正确
+  function verify(idx) {
+    if (!regs[idx].test($inputs.eq(idx).val())) {
+      $spans.eq(idx).text(errors[idx]);
+      return false;
+    }
+    $spans.eq(idx).text('');
+    return true;
+  }
+  // 将input表单绑定change事件，值改变进行验证
+  for (let i = 0; i < $inputs.length; i++) {
+    $inputs.eq(i).change({ idx: i }, (event) => {
+      verify(event.data.idx);
+    });
+  }
+
+  const $signIn = $('.signIn');
+  const $signUp = $('.signUp');
+
+  // 点击登录
+  $signIn.click(() => {
+    let t = true;
+    for (let i = 3; i < $inputs.length; i++) {
+      if (!verify(i)) {
+        t = false;
+        $spans.eq(i).text(errors[i]);
+      }
+    }
+    if (t) {
+      let userInfo = { userName: '0x3f3f3f3f' };
+      localStorage.setItem('userinfo', JSON.stringify(userInfo));
+      window.location.href = '../../templates/index.html';
+    }
+  });
+
+  // 点击注册
+  $signUp.click(() => {
+    let t = true;
+    for (let i = 0; i < 3; i++) {
+      if (!verify(i)) {
+        t = false;
+        $spans.eq(i).text(errors[i]);
+      }
+    }
+    if (t) {
+      alert('注册成功!');
+      for (let i = 0; i < 3; i++) {
+        $inputs.eq(i).val('');
+      }
+      $('#sign-in').click();
+    }
+  });
+})();

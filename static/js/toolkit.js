@@ -51,6 +51,7 @@ $('.toolkit').html(`
   $('.toolkit .toolkit-list .cart').click(() => {
     if (!localStorage.getItem('userinfo')) {
       location.href = '../../templates/login.html';
+      return;
     }
     window.open('../../templates/cart.html');
   })

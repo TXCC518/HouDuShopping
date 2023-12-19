@@ -72,10 +72,18 @@ h2 {
 /* 表单样式 */
 input {
   width: 100%;
-  margin: 8px 0;
+  /* margin: 8px 0; */
   padding: 12px;
   background-color: #eee;
   border: none;
+}
+
+.form span {
+  height: 16px;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 700;
+  color: red;
 }
 
 /* 忘记密码样式 */
